@@ -15,32 +15,40 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
        <div class="mdl-layout__header-row" id="headerD">
-       <div class="mdl-cell mdl-cell--1-col mdl-cell--5-offset">
+       <div class="mdl-cell mdl-cell--1-col mdl-cell--3-offset">
+         <img src="Drivy.png" width="50%" />
+       </div>
+       <div class="mdl-cell mdl-cell--1-col">
       <!-- Title -->
-        <span class="mdl-layout-title">Drivy</span>
+        <span class="mdl-layout-title">drivy</span>
         </div>
+        <span> Location de voiture entre particuliers</span>
         </div>
     </header>
     </div>
 <br/><br/>
     <div class="mdl-grid" id="topPage">
     <br/><br/><br/><br/><br/><br/><br/><br/>
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset" id="title">
       <h1>Choose your car !</h1>
       </div>
       <br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
 
-    <div class="mdl-grid ">
+    <div class="mdl-grid " id="contentPage">
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--6-col mdl-cell--3-offset " id="car">
     <div class="mdl-card mdl-cell mdl-cell--5-col mdl-cell--1-offset">
+    <h3> Simulator </h3>
     <br/>
       <input class="model mdl-textfield__input" type="text" placeholder="Car model"/><br/>
       <input class="price-by-day mdl-textfield__input" type="number" placeholder="Price by day"/><br/>
       <input class="price-by-km mdl-textfield__input" type="number" placeholder="Price by km"/>
       </div>
       <div class="mdl-card mdl-cell mdl-cell--5-col mdl-cell--1-offset" id="rental">
+      <h8>Rental begin date:</h8>
       <input class="begin mdl-textfield__input" type="date" placeholder="Rental begin date"/> <br/>
+      <h8>Rental end date:</h8>
       <input class="end mdl-textfield__input" type="date" placeholder="Rental end date"/> <br/>
       <input class="distance mdl-textfield__input" type="number" placeholder="Distance in km"/> <br/>
       <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
@@ -52,17 +60,24 @@
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="compute">Compute</button>
         <br/>
      </div>
+      <div class="mdl-cell mdl-cell--10-col mdl-cell--1-offset">
+        <div class="mdl-cell mdl-cell--5-col" id="actors" style="display: none;"></div>
+        <div class="mdl-cell mdl-cell--5-col"  id="carImage" style="display: none;">
+        <div class="mdl-cell mdl-cell--12-col" >
+          <img src="Drivy2.png" width="100%" />
+          <h3>Let's go !</h3>
+        </div>
+      </div>
+      
+      </div>
+
     </div>
-    
     </div>
 
-    <div class="mdl-grid">
-      <div class="mdl-cell">
-        <div class="mdl-cell mdl-cell--10-col" id="actors"></div>
-      </div>
-    </div>
+
 
     <script id="template" type="x-tmpl-mustache">
+      <h3>Results :</h3>
       {{#actors}}
         <div class="actor">
           <span>{{who}}</span>
@@ -71,6 +86,19 @@
         </div>
       {{/actors}}
     </script>
+
+    <script>
+      document.querySelector("#compute").onclick = function() {
+      if (window.getComputedStyle(document.querySelector('#actors')).display=='none'){
+      document.querySelector("#actors").style.display="block";
+      document.querySelector("#carImage").style.display="block";
+      } else {
+      document.querySelector("#actors").style.display="none";
+      document.querySelector("#carImage").style.display="none";
+      }
+      }
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
