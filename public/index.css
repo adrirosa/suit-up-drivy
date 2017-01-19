@@ -1,0 +1,19 @@
+#topPage{
+	background-image: url("road.jpeg");
+	background-size: cover;
+}
+
+h1{
+	color: rgb(255,64,129);
+	text-shadow: 2px 1px black;
+}
+
+.mdl-card.center-items {
+  justify-content: center;
+}
+
+#headerD{
+	color: white;
+	background-color: rgb(255,64,129);
+}
+
